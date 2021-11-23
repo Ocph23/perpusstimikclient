@@ -7,7 +7,8 @@ import { AuthService } from './auth.service';
 })
 export class HelperService {
 
-  apiUrl = "http://localhost/perpusstimik/webapp/public";
+  //apiUrl = "http://localhost/perpusstimik/webapp/public";
+  apiUrl = "http://perpusstimikapi.stimiksepnop.ac.id";
   //apiUrl = "http://localhost:8000";
 
 
