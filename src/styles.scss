@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.swal2-popup{
+    width: 250px !important;
+    font-size: 1.2em;
+}
+
+.swal2-title{
+    font-size: 1em !important;
+}
+
+.busyid{
+    background:transparent !important;
+    width: 100px !important;
+    font-size: small;
+}
+
+
+
+.table{
+  width: 100%;
+}
+
+
+th, td{
+  padding: 6px 7px;
+  border: #dfe1e4 solid 1px;
+  background-color: #F8FAFC;
+  color: #64748B;
+  white-space: nowrap;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  text-transform: capitalize;
+  vertical-align: middle;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  }
+
+  td{
+    text-align: left;
+  }
+
+
+
+  [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border-color: transparent !important;
+
+    transition-duration: 150ms;
+    transition-timing-function: linear;
+    width: 100%;
+    color: rgba(71, 85, 105, var(--tw-text-opacity));
+    border-radius: 0.25rem;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    background-color: rgba(255, 255, 255,1) !important;
+}

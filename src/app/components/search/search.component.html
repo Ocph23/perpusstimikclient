@@ -1,0 +1,8 @@
+<div class="search">
+    <div class="search-body">
+        <input (keydown.enter)="keyEnterChange($event)" (change)="textChange($event)" [(ngModel)]="data" placeholder="cari" class="search-input"/>
+        <button class="search-btn"><span class="fa fa-search" (click)="textChange(data)"></span></button>
+    </div>
+</div>
+
+

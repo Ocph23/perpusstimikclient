@@ -1,0 +1,58 @@
+<!-- Header -->
+<div style="margin: 10px;" class="relative bg-red-600 md:pt-32 pb-32 pt-12">
+  <div class="px-4 md:px-10 mx-auto w-full">
+    <div>
+      <!-- Card stats -->
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <app-card-stats
+            statSubtitle="BUKU"
+            statTitle="{{model.buku|number}}"
+            statArrow="up"
+            statPercent="{{model.itembuku}}"
+            statPercentColor="text-emerald-500"
+            statDescripiron="Since last month"
+            statIconName="fa fa-book"
+            statIconColor="bg-red-500"
+          ></app-card-stats>
+        </div>
+        <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <app-card-stats
+            statSubtitle="Penelitian"
+            statTitle="{{model.penelitian|number}}"
+            statArrow="down"
+            statPercent="{{model.itempenelitian}}"
+            statPercentColor="text-red-500"
+            statDescripiron="Since last week"
+            statIconName="fa fa-vials"
+            statIconColor="bg-orange-500"
+          ></app-card-stats>
+        </div>
+        <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <app-card-stats
+            statSubtitle="Anggota"
+            statTitle="{{model.anggota}}"
+            statArrow="down"
+            statPercent=" "
+            statPercentColor="text-orange-500"
+            statDescripiron="Since yesterday"
+            statIconName="fas fa-users"
+            statIconColor="bg-pink-500"
+          ></app-card-stats>
+        </div>
+        <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <app-card-stats
+            statSubtitle="Belum Kembali"
+            statTitle="{{model.belumkembali}}"
+            statArrow="up"
+            statPercent=" "
+            statPercentColor="text-emerald-500"
+            statDescripiron="Since last month"
+            statIconName="fa fa-undo"
+            statIconColor="bg-emerald-500"
+          ></app-card-stats>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

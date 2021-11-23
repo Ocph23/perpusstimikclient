@@ -1,0 +1,93 @@
+<div class="flex flex-wrap w-full">
+  <div class="relative mt-2 flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white">
+    <div class="rounded-t  mb-0 px-4 py-3 border-0">
+
+      <div class="rounded-t  mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+          <div class="relative w-full px-4 max-w-full flex justify-between">
+            <h5 class="font-semibold text-lg text-blueGray-700"> Pengembalian Buku </h5>
+            <div class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
+              <div class="relative flex w-full flex-wrap items-stretch">
+
+                <input [(ngModel)]="searchText" type="text" placeholder="Cari Berdasarkan Kode Buku"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10" />
+              </div>
+            </div>
+            <button (click)="CariPeminjaman()"
+              class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              type="button">
+              <i class="fas fa-search"></i>
+            </button>
+            <button class="btn"></button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="model" class="flex flex-wrap items-center">
+        <div class="relative w-full px-4 max-w-full flex justify-between" style="align-items:flex-end;">
+          <div class="flex">
+            <div style="margin-right: 40px;">
+              <h5 class="text-blueGray-700"> Kode Peminjaman </h5>
+              <h5 class="text-blueGray-700"> Nomor Anggota </h5>
+              <h5 class="text-blueGray-700"> Nama Pemesan </h5>
+              <h5 class="text-blueGray-700"> Tanggal Pengembalian </h5>
+            </div>
+            <div>
+              <h5 class="text-blueGray-700"> : {{model.id}} </h5>
+              <h5 class="text-blueGray-700"> : {{model.anggota.kodeanggota}} </h5>
+              <h5 class="text-blueGray-700"> : {{model.anggota.nama}} </h5>
+              <h5 class="text-blueGray-700"> : {{pengembalian.tanggal|date:'dd/MM/yyyy'}} </h5>
+            </div>
+          </div>
+          <button  style="justify-self:flex-end;" class="px-2 h-10 text-white  bg-red-600" (click)="Save()">
+            Buat Pengembalian </button>
+        </div>
+      </div>
+    </div>
+    <div class="block w-full overflow-x-auto p-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              Seri
+            </th>
+            <th>
+              Judul
+            </th>
+            <th>
+              Penulis
+            </th>
+            <th>
+              Jenis
+            </th>
+            <th>
+              Terlambat(hari)
+            </th>
+            <th>
+              Harga
+            </th>
+            <th>
+              Denda
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datas">
+            <td>{{item.peminjamanItem.ItemKarya.nomorseri}}</td>
+            <td>{{item.peminjamanItem.ItemKarya.parent.judul}}</td>
+            <td>{{item.peminjamanItem.ItemKarya.parent.penulis}}</td>
+            <td>{{item.peminjamanItem.ItemKarya.jenis}}</td>
+            <td>{{item.terlambat}}</td>
+            <td>Rp. {{item.harga|number}}</td>
+            <td>Rp. {{(item.terlambat*item.harga)|number}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6" style="text-align: end;">Total Denda</td>
+            <td>Rp. {{totalDenda(datas)}}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

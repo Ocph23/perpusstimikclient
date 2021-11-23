@@ -1,0 +1,46 @@
+<app-search (TextRequest)="textChanged($event)"></app-search>
+<div class="flex flex-wrap w-full">
+    <div class="relative mt-2 flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white">
+        <div class="rounded-t  mb-0 px-4 py-3 border-0">
+            <div class="flex flex-wrap items-center">
+                <div class="relative w-full px-4 max-w-full flex justify-between">
+                    <h3 class="font-semibold text-lg text-blueGray-700">
+                        DATA PENGEMBALIAN </h3>
+                </div>
+            </div>
+        </div>
+        <div class="block w-full overflow-x-auto p-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Kode
+                        </th>
+                        <th>
+                            Nomor/Nama Anggota
+                        </th>
+                        <th>
+                            Kode Peminjaman
+                        </th>
+                        <th>
+                            Tanggal kembali
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of datas">
+                        <td>{{item.id}}</td>
+                        <td>{{item.peminjaman.anggota.kodeanggota}}/{{item.peminjaman.anggota.nama}}</td>
+                        <td>{{item.peminjaman.id}}</td>
+                        <td>{{item.tanggal|date:'dd-MM-yyyy'}}</td>
+                        <td style="text-align: center;">
+                            <app-table-pengembalian-dropdown (verifikasiRequest)="verifikasiPesanan($event)"  [model]="item" ></app-table-pengembalian-dropdown>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

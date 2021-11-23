@@ -1,0 +1,37 @@
+<div fxLayout="column" fxFlex="60" fxFlexOffset="20" class="container upload" fxLayoutAlign="center center">
+    <input style="display: none" (change)="handleFile($event)" type="file" #fileInput />
+    <div class="upload-view">
+          <img (click)="fileInput.click()" 
+          class="img-responsive mx-auto" 
+          src="{{ image }}" alt="">
+          
+          <button *ngIf="!image"  class="
+          font-bold uppercase
+          text-xs px-4
+          py-2 rounded
+          shadow hover:shadow-md
+          outline-none
+          focus:outline-none
+          mr-1 ease-linear
+          transition-all
+          duration-150"
+        color="basic" (click)="fileInput.click()">Pick File</button>
+    </div>
+  
+    <div *ngIf="hasChange" class="upload-btn">
+        <button  class="
+        font-bold uppercase
+        text-xs px-4
+        py-2 rounded
+        shadow hover:shadow-md
+        outline-none
+        focus:outline-none
+        mr-1 ease-linear
+        transition-all
+        duration-150" color="primary" (click)="onUpload()">Upload  
+         <span class="progress-bar" *ngIf="isUploading" >
+           {{ progressPercent }}%
+        </span></button>
+      
+    </div>
+</div> 
