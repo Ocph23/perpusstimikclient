@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Peminjaman } from 'src/app/models/buku.model';
 import { MessageService } from 'src/app/services/message.service';
 import { PeminjamanService } from 'src/app/services/peminjaman.service';
 
@@ -12,7 +13,9 @@ export class PeminjamanDetailComponent implements OnInit {
 
   model: any;
 
-  constructor(activedRouter: ActivatedRoute, 
+  constructor(
+    private router:Router,
+    activedRouter: ActivatedRoute, 
     private peminjamanService:PeminjamanService, 
     private message: MessageService,
     ) {
@@ -27,13 +30,7 @@ export class PeminjamanDetailComponent implements OnInit {
   }
 
   createPengembalian(){
-    // var peminjaman = {anggotaid:this.model.anggotaid, keterangan:"", status:"sukses", items:this.model.items} as Peminjaman;
-    // this.peminjamanService.createPeminjaman(peminjaman).then(response=>{
-    //   this.model.status='sukese';
-    //   this.message.infoMessage("Peminjaman Berhasil Dibuat !")
-    // }, err=>{
-    //   this.message.errorMessage(err.message);
-    // });
+    this.router.navigate(['/admin/pengembalian/'+this.model.id]);
   }
 
 }

@@ -6,6 +6,7 @@
                 <div class="relative w-full px-4 max-w-full flex justify-between">
                     <h3 class="font-semibold text-lg text-blueGray-700">
                         DATA PENGEMBALIAN </h3>
+                        <a href="admin/pengembalian/0" class="px-2"> <i class="fa fa-plus text-sm"></i></a>
                 </div>
             </div>
         </div>
@@ -31,9 +32,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of datas">
-                        <td>{{item.id}}</td>
+                        <td>{{item.kode}}</td>
                         <td>{{item.peminjaman.anggota.kodeanggota}}/{{item.peminjaman.anggota.nama}}</td>
-                        <td>{{item.peminjaman.id}}</td>
+                        <td>{{item.peminjaman.kode}}</td>
                         <td>{{item.tanggal|date:'dd-MM-yyyy'}}</td>
                         <td style="text-align: center;">
                             <app-table-pengembalian-dropdown (verifikasiRequest)="verifikasiPesanan($event)"  [model]="item" ></app-table-pengembalian-dropdown>

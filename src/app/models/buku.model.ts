@@ -87,6 +87,7 @@ export interface PemesananItem{
 
 export interface Peminjaman{
     id:number;
+    kode:string;
     anggota:Anggota;
     anggotaid:number;
     keterangan:string;
@@ -115,6 +116,7 @@ export interface PeminjamanItem{
 
 export interface Pengembalian{
     id:number;
+    kode:string;
     peminjaman:Peminjaman;
     items:PengembalianItem[];
     tanggal:Date;

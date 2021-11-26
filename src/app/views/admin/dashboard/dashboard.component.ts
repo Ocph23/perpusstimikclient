@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { SettingService } from "src/app/services/setting.service";
 
 @Component({
   selector: "app-dashboard",
@@ -6,8 +7,16 @@ import { Component, OnInit } from "@angular/core";
 })
 export class DashboardComponent implements OnInit {
 
-  model:any={buku:1110, itembuku:'1000 eksemplar', itempenelitian:'1000 eksemplar', penelitian:200, anggota:100, belumkembali:100};
-  constructor() {}
+  model:any={buku:0, itembuku:'0 eksemplar', itempenelitian:'0 eksemplar', penelitian:0, anggota:0, belumkembali:0};
+  constructor( private settingService:SettingService) {
+    this.settingService.dashboard().then(result=>{
+      var resultTemp = result as any;
+      var data=resultTemp.data;
+      this.model={buku:data.buku, itembuku: data.itembuku +" eksemplar", itempenelitian: data.itempenelitian+ " eksemplar", penelitian:data.penelitian, anggota:data.anggota, belumkembali:data.belumkembali};
+    })
+
+
+  }
 
   ngOnInit() {}
 }

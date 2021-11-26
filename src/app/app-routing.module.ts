@@ -6,6 +6,7 @@ import { AnggotaComponent } from './views/admin/anggota/anggota.component';
 import { AddBukuComponent } from './views/admin/buku/add-buku/add-buku.component';
 import { BukuComponent } from './views/admin/buku/buku.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
+import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item-history.component';
 import { ItemKaryaComponent } from './views/admin/item-karya/item-karya.component';
 import { PemesananDetailComponent } from './views/admin/pemesanan/pemesanan-detail/pemesanan-detail.component';
 import { PemesananComponent } from './views/admin/pemesanan/pemesanan.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: "detail/:id/buku", component: ItemKaryaComponent },
       { path: "detail/:id/penelitian", component: ItemKaryaComponent },
       { path: "detail/:id/pengembalian", component: PengembalianDetailComponent },
+      { path: "history/:id", component: ItemHistoryComponent },
        { path: "peminjaman", component: PeminjamanComponent },
        { path: "pengembalian", component: PengembalianComponent },
        { path: "pengembalian/:id", component: CreatePengembalianComponent },

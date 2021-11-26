@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ItemKarya } from 'src/app/models/buku.model';
 import { BukuService } from 'src/app/services/buku.service';
 import { MessageService } from 'src/app/services/message.service';
@@ -17,7 +17,9 @@ export class ItemKaryaComponent implements OnInit {
   model: any;
   count: number = 0;
 
-  constructor(private activedRouter: ActivatedRoute, private bukuService: BukuService, private message: MessageService,
+  constructor(
+    private router:Router,
+    private activedRouter: ActivatedRoute, private bukuService: BukuService, private message: MessageService,
     private penelitianService: PenelitianService) {
     var param1: any = this.activedRouter.snapshot.paramMap.get('id');
     var param2: any = this.activedRouter.snapshot.url[2].path;
@@ -32,7 +34,7 @@ export class ItemKaryaComponent implements OnInit {
       this.serviceCurrent = penelitianService;
       penelitianService.getById(param1).then(response => {
         this.model = response;
-        
+
       });
     }
   }
@@ -68,7 +70,7 @@ export class ItemKaryaComponent implements OnInit {
           if (this.serviceCurrent.controller == "api/penelitian") {
             var service = this.serviceCurrent as PenelitianService;
             service.createItems(this.model.id, data).then(response => {
-             this.SetResponse(response as ItemKarya[]);
+              this.SetResponse(response as ItemKarya[]);
               this.message.infoMessage("Berhasil !")
             }, err => {
 
@@ -89,7 +91,7 @@ export class ItemKaryaComponent implements OnInit {
       allowOutsideClick: () => !swal.isLoading()
     }).then((result) => {
       if (result.isConfirmed) {
-       // this.message.infoMessage("Berhasil !")
+        // this.message.infoMessage("Berhasil !")
       }
     })
   }
@@ -98,7 +100,13 @@ export class ItemKaryaComponent implements OnInit {
     response.forEach(element => {
       this.model.items.push(element);
     });
-}
+  }
+
+
+  showHistory(data:any){
+    this.router.navigate(["admin/history/"+data.id]);
+   
+  }
 
 }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ItemKarya, Peminjaman,Pengembalian, PengembalianItem, PeminjamanItem, Setting } from 'src/app/models/buku.model';
 import { MessageService } from 'src/app/services/message.service';
 import { PeminjamanService } from 'src/app/services/peminjaman.service';
@@ -18,10 +18,18 @@ public datas:PengembalianItem[]=[];
 public searchText:string="";
   model!: Peminjaman;
   pengembalian!: Pengembalian;
-  constructor( private router:Router, private pengembalianService:PengembalianService, private peminjamanService:PeminjamanService, settingService:SettingService, message:MessageService) {
+  constructor( private router:Router, activatedRote:ActivatedRoute, private pengembalianService:PengembalianService, private peminjamanService:PeminjamanService, settingService:SettingService, message:MessageService) {
+    
+    
     settingService.getLast().then(x=>{
       if(x!=null){
        this.setting=x as Setting;
+          var param1:any = activatedRote.snapshot.paramMap.get('id');
+          if(param1!=0){
+            this.searchText=param1;
+            this.CariPeminjaman();
+          }
+
       }else{
          message.errorMessage("Setting Peminjaman Belum Ada !"); 
       }
@@ -78,7 +86,6 @@ public searchText:string="";
     }
 
     Save(){
-
         this.pengembalian.items=this.datas;
         this.pengembalianService.post(this.pengembalian).then(response=>{
           this.router.navigate(['/admin/pengembalian']);

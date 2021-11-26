@@ -52,6 +52,7 @@ import { SettingComponent } from './views/admin/setting/setting.component';
 import { SettingService } from './services/setting.service';
 import { TablePengembalianDropdown } from './components/dropdowns/table-pengembaliandropdown/table-pengembaliandropdown.component';
 import { SearchComponent } from './components/search/search.component';
+import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item-history.component';
 
 
 
@@ -107,7 +108,8 @@ import { SearchComponent } from './components/search/search.component';
     PengembalianDetailComponent,
     CreatePengembalianComponent,
     SettingComponent,
-    SearchComponent
+    SearchComponent,
+    ItemHistoryComponent
     
   ],
   imports: [

@@ -20,7 +20,7 @@
                         <h3 class="font-semibold text-md text-blueGray-700"> : {{model.status}} </h3>
                     </div>
                   </div>
-                    <button  *ngIf="model.status=='belum'" style="justify-self:flex-end;" (click)="createPengembalian()" class="px-2 h-10 text-white  bg-red-600"> Buat Peminjaman </button>
+                    <button  *ngIf="model.status=='sukses'" style="justify-self:flex-end;" (click)="createPengembalian()" class="px-2 h-10 text-white  bg-red-600"> Buat Pengembalian </button>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 </thead>
                 <tbody >
                     <tr *ngFor="let item of model.items">
-                        <td>{{item.item_karya.nomorseri}}</td>
+                        <td>{{item.ItemKarya.nomorview}}</td>
                         <td>{{item.item_karya.parent.judul}}</td>
                         <td>{{item.item_karya.parent.penulis}}</td>
                         <td>{{item.item_karya.jenis}}</td>
