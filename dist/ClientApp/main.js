@@ -2530,10 +2530,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
 
 class HelperService {
+    //apiUrl = "http://localhost:8000";
     constructor() {
         //apiUrl = "http://localhost/perpusstimik/webapp/public";
-        //apiUrl = "https://perpusstimikapi.stimiksepnop.ac.id";
-        this.apiUrl = "http://localhost:8000";
+        this.apiUrl = "https://perpusstimikapi.stimiksepnop.ac.id";
     }
 }
 HelperService.ɵfac = function HelperService_Factory(t) { return new (t || HelperService)(); };
