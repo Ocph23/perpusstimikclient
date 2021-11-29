@@ -18,4 +18,13 @@ datas:Anggota[]=[];
   ngOnInit(): void {
   }
 
+
+
+  updateStatus(anggota:Anggota){
+    this.anggotaService.updateStatus(anggota).then(response=>{
+        var result=response as Anggota;
+        anggota.aktif=result.aktif;
+    });
+  }
+
 }

@@ -8,22 +8,39 @@ import { RestService } from './rest.service';
 })
 export class AnggotaService {
 
-  controller:string="api/anggota"
-  constructor(private restService:RestService,  private message:MessageService) { }
+  controller: string = "api/anggota"
+  constructor(private restService: RestService, private message: MessageService) { }
 
-  get(){
-  this.message.busy();
- return new Promise((resolve, reject)=>{
-    this.restService.get(this.controller).subscribe(response=>{
-      var result = response as any;
-      resolve(result.data as Anggota[]);
-      this.message.busyStop();
-    },err=>{
-      this.message.busyStop();
-      this.message.errorMessage(err);
-    })
+  get() {
+    this.message.busy();
+    return new Promise((resolve, reject) => {
+      this.restService.get(this.controller).subscribe(response => {
+        var result = response as any;
+        resolve(result.data as Anggota[]);
+        this.message.busyStop();
+      }, err => {
+        this.message.busyStop();
+        this.message.errorMessage(err);
+      })
 
-  });
-}
+    });
+  }
+
+
+
+  updateStatus(anggota:Anggota) {
+    this.message.busy();
+    return new Promise((resolve, reject) => {
+      this.restService.get(this.controller+"/updatestatus/"+anggota.id).subscribe(response => {
+        var result = response as any;
+        resolve(result.data as Anggota);
+        this.message.busyStop();
+      }, err => {
+        this.message.busyStop();
+        this.message.errorMessage(err);
+      })
+
+    });
+  }
 
 }

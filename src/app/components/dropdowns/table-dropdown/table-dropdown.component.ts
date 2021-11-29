@@ -9,7 +9,6 @@ export class TableDropdownComponent implements AfterViewInit {
   dropdownPopoverShow = false;
   @Input() edit:any;
   @Input() view:any;
-
    @ViewChild("btnDropdownRef", { static: false })
   btnDropdownRef!: ElementRef;
    @ViewChild("popoverDropdownRef", { static: false })

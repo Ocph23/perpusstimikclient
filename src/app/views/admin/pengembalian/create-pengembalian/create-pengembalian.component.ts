@@ -72,9 +72,7 @@ public searchText:string="";
     // expected output: starting timer...
     var d=Date.now();
     var selisih = (Date.now() - start)/miliday;
-    if(selisih<=this.setting.lamaSewa)
-      return 0;
-    return Math.floor(selisih-this.setting.lamaSewa);
+  return Math.floor(selisih);
     }
 
     totalDenda(items:PengembalianItem[]){

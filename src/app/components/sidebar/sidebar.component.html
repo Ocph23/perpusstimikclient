@@ -89,6 +89,17 @@
             Penelitian
           </a>
         </li>
+
+        <li class="items-center">
+          <a [routerLink]="['/admin/lokasi']" class="text-xs uppercase py-3 font-bold block" routerLinkActive
+          #adminLokasi="routerLinkActive" [ngClass]="adminLokasi.isActive ? 'text-red-600 hover:text-red-700' : 'text-blueGray-700 hover:text-blueGray-500'">
+            <i class="fas fa-thumbtack mr-2 text-sm" [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "></i>
+            Lokasi
+          </a>
+        </li>
+
         <li class="items-center">
           <a [routerLink]="['/admin/pemesanan']" class="text-xs uppercase py-3 font-bold block" routerLinkActive
           #adminPemesanan="routerLinkActive" [ngClass]="adminPemesanan.isActive ? 'text-red-600 hover:text-red-700' : 'text-blueGray-700 hover:text-blueGray-500'">

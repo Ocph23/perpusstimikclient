@@ -68,6 +68,12 @@
             <th>
               Denda
             </th>
+            <th>
+              Catatan/Keadaan
+            </th>
+            <th>
+              Hapus
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -79,12 +85,15 @@
             <td>{{item.terlambat}}</td>
             <td>Rp. {{item.harga|number}}</td>
             <td>Rp. {{(item.terlambat*item.harga)|number}}</td>
+            <td><textarea ([ngModel])="item.keadaan"></textarea></td>
+            <td style="text-align: center;"><i style="color: red;" class="fa fa-trash"></i></td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="6" style="text-align: end;">Total Denda</td>
             <td>Rp. {{totalDenda(datas)}}</td>
+            <td></td>
           </tr>
         </tfoot>
       </table>

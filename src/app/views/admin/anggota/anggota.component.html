@@ -31,8 +31,6 @@
               <th>
                 Status Aktif
               </th>
-              <th>
-              </th>
             </tr>
           </thead>
           <tbody>
@@ -42,9 +40,8 @@
               <td>{{item.jenis}}</td>
               <td>{{item.jenis_kelamin}}</td>
               <td>{{item.tempat_lahir}}, {{item.tanggal_lahir|date:'dd-MM-yyyy'}}</td>
-              <td>{{item.aktif}}</td>
-              <td>
-                  
+              <td style="text-align: center;">
+                  <button style="width: 100%; background-color: rgba(217, 119, 6,1)" class="px-2 h-10 text-white" (click)="updateStatus(item)">{{item.aktif}}</button>
               </td>
             </tr>
           </tbody>

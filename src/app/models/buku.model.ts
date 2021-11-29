@@ -125,6 +125,18 @@ export interface Pengembalian{
 }
 
 
+
+
+export interface Lokasi{
+    id:number;
+    nama:string;
+    keterangan:string;
+    created_at:Date;
+    updated_at:Date;
+}
+
+
+
 export interface PengembalianItem{
     id:number;
     harga: number;

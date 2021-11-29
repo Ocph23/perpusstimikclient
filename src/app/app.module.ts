@@ -53,9 +53,8 @@ import { SettingService } from './services/setting.service';
 import { TablePengembalianDropdown } from './components/dropdowns/table-pengembaliandropdown/table-pengembaliandropdown.component';
 import { SearchComponent } from './components/search/search.component';
 import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item-history.component';
-
-
-
+import { LokasiComponent } from './views/admin/lokasi/lokasi.component';
+import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.component';
 
 
 @NgModule({
@@ -109,7 +108,9 @@ import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item
     CreatePengembalianComponent,
     SettingComponent,
     SearchComponent,
-    ItemHistoryComponent
+    ItemHistoryComponent,
+    LokasiComponent,
+    AddLokasiComponent,
     
   ],
   imports: [
