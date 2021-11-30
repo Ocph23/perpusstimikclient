@@ -58,12 +58,10 @@ export class AuthService {
       })
   }
 
-
   logout() {
     this.localStoreServices.logOut();
     this.router.navigate(['']);
   }
-
 
   getProfile() {
     return new Promise((resolve, reject) => {

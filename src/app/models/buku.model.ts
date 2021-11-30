@@ -12,6 +12,8 @@ export interface Buku{
     kota:string,
     cover:string,
     penulis: string
+    lokasi:Lokasi,
+    lokasi_id:number
 }
 
 
@@ -28,6 +30,8 @@ export interface Penelitian{
     deskripsi:string,
     tahun:number,
     cover:string,
+    lokasi:Lokasi,
+    lokasi_id:number
 }
 
 

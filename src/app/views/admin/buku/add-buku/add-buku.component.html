@@ -116,9 +116,19 @@
             </div>
             <hr class="mt-6 border-b-1 border-blueGray-300" />
             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
-                Deskripsi, Bibliografi & Cover
+               Lokasi, Deskripsi, Bibliografi & Cover
             </h6>
             <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label htmlfor="grid-password" class="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+                            Lokasi </label>
+                            <select [(ngModel)]="model.lokasi_id" type="text" rows="4">
+                                  <option *ngFor="let item of dataLokasi" [ngValue]="item.id">{{item.nama}}</option>      
+                            </select>
+                    </div>
+                </div>
+               
                 <div class="w-full lg:w-12/12 px-4">
                     <div class="relative w-full mb-3">
                         <label htmlfor="grid-password" class="block uppercase text-blueGray-600 text-xs font-bold mb-2">
