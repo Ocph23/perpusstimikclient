@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Peminjaman } from 'src/app/models/buku.model';
 import { MessageService } from 'src/app/services/message.service';
 import { PeminjamanService } from 'src/app/services/peminjaman.service';
@@ -21,7 +22,7 @@ export class PeminjamanComponent implements OnInit {
   @ViewChild("btnDropdownRef", { static: false })  btnDropdownRef!: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })  popoverDropdownRef!: ElementRef;
 
-  constructor(private message:MessageService, peminjamanService:PeminjamanService) {
+  constructor(private router:Router, private message:MessageService, peminjamanService:PeminjamanService) {
     peminjamanService.get().then((result)=>{
         this.sources= result as Peminjaman[];
         this.textChanged('');
@@ -46,7 +47,7 @@ export class PeminjamanComponent implements OnInit {
 
   verifikasiPesanan(event: any) {
     this.dropdownPopoverShow = false;
-    
+    this.router.navigate(["/admin/pengembalian/"+event.items[0].ItemKarya.nomorseri]);
   }
   
   textChanged(textparam:any){

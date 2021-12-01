@@ -55,7 +55,13 @@ public searchText:string="";
           var exsitsData = this.datas.find(x=>x.peminjamanItem.id==element.id);
           if(!exsitsData)
           {
-            item.terlambat = this.hitungSelisihHari(element.tanggal_kembali);
+            var selisih= this.hitungSelisihHari(element.tanggal_kembali);
+            if(selisih>this.setting.lamaSewa){
+              item.terlambat = selisih -this.setting.lamaSewa;
+            }else{
+              item.terlambat=0;
+            }
+            
             item.harga = this.setting.denda;
             this.datas.push(item);
           }
