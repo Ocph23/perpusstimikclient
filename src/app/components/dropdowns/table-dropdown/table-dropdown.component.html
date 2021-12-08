@@ -4,15 +4,15 @@
 <div class="min-w-48 z-50" #popoverDropdownRef>
   <div class="bg-white text-base float-left py-2 list-none text-left rounded shadow-lg mt-1 min-w-48"
     [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'">
-    <a href="{{edit}}" *ngIf="edit"
+    <a href="{{edit}}" *ngIf="edit" style="width: 100%; text-align: center;"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
       Edit
     </a>
-    <a href="#pablo"
+    <button (click)="deleteAction()"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
       Delete
-    </a>
-    <a href="{{view}}" *ngIf="view"
+    </button>
+    <a href="{{view}}" *ngIf="view" style="width: 100%; text-align: center;"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
       View Item
     </a>

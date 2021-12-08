@@ -13,7 +13,7 @@ export class PenelitianComponent implements OnInit {
   datas:Penelitian[]=[];
   sources: Penelitian[]=[];
 
-  constructor(private message:MessageService, penelitianService:PenelitianService) {
+  constructor(private message:MessageService,private penelitianService:PenelitianService) {
       penelitianService.get().then((result)=>{
         this.sources= result as Penelitian[];
         this.textChanged('');
@@ -43,6 +43,27 @@ export class PenelitianComponent implements OnInit {
     this.datas= this.sources;
 
 
+  }
+
+  
+  delete(data:any){
+    this.message.dialog().fire({
+      title: 'Yakin ?',
+      text: "Menghapus Data !",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ya'
+    }).then(x=>{
+        this.penelitianService.delete(data.id).then(response=>{
+          var index = this.datas.indexOf(data);  
+          this.datas.splice(index,1);
+          this.message.successMessage("Data  berhasil dihapus !");
+        }, err=>{
+          this.message.errorMessage("Data  tidak berhasil dihapus !");
+        });
+    });
   }
 
 }

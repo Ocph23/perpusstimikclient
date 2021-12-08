@@ -12,7 +12,7 @@ import { RestService } from 'src/app/services/rest.service';
 export class BukuComponent implements OnInit {
   datas:Buku[]=[];
   sources:Buku[]=[];
-  constructor(private message:MessageService, bukuService:BukuService) {
+  constructor(private message:MessageService, private bukuService:BukuService) {
       bukuService.get().then((result)=>{
         this.sources= result as Buku[];
         this.textChanged("");
@@ -21,7 +21,6 @@ export class BukuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
   textChanged(textparam:any){
     var text = textparam.toString().toLowerCase();
@@ -41,6 +40,26 @@ export class BukuComponent implements OnInit {
     this.datas= this.sources;
 
 
+  }
+
+  delete(data:any){
+    this.message.dialog().fire({
+      title: 'Yakin ?',
+      text: "Menghapus Data !",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ya'
+    }).then(x=>{
+        this.bukuService.delete(data.id).then(response=>{
+          var index = this.datas.indexOf(data);  
+          this.datas.splice(index,1);
+          this.message.successMessage("Data  berhasil dihapus !");
+        }, err=>{
+          this.message.errorMessage("Data  tidak berhasil dihapus !");
+        });
+    });
   }
 
 }

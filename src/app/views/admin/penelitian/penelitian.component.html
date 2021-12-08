@@ -45,7 +45,7 @@
               <td>{{item.pembimbing}}</td>
               <td class="text-center">{{item.tahun}}</td>
               <td style="text-align: center;" >
-                <app-table-dropdown [edit]="'admin/penelitian/'+item.id" [view]="'admin/detail/'+item.id+'/penelitian'" ></app-table-dropdown>
+                <app-table-dropdown (deleteRequest)="delete($event)" [model]="item" [edit]="'admin/penelitian/'+item.id" [view]="'admin/detail/'+item.id+'/penelitian'" ></app-table-dropdown>
               </td>
             </tr>
           </tbody>

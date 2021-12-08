@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input } from "@angular/core";
+import { Component, AfterViewInit, ViewChild, ElementRef, Input, Output, EventEmitter } from "@angular/core";
 import { createPopper } from "@popperjs/core";
 
 @Component({
@@ -7,11 +7,14 @@ import { createPopper } from "@popperjs/core";
 })
 export class TableDropdownComponent implements AfterViewInit {
   dropdownPopoverShow = false;
-  @Input() edit:any;
-  @Input() view:any;
-   @ViewChild("btnDropdownRef", { static: false })
+  @Input() edit: any;
+  @Input() view: any;
+  @Output() deleteRequest = new EventEmitter<any>();
+  @Input() model!: any;
+
+  @ViewChild("btnDropdownRef", { static: false })
   btnDropdownRef!: ElementRef;
-   @ViewChild("popoverDropdownRef", { static: false })
+  @ViewChild("popoverDropdownRef", { static: false })
   popoverDropdownRef!: ElementRef;
   ngAfterViewInit() {
     createPopper(
@@ -22,7 +25,7 @@ export class TableDropdownComponent implements AfterViewInit {
       }
     );
   }
-  toggleDropdown(event:any) {
+  toggleDropdown(event: any) {
     event.preventDefault();
     if (this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false;
@@ -30,4 +33,11 @@ export class TableDropdownComponent implements AfterViewInit {
       this.dropdownPopoverShow = true;
     }
   }
+
+  deleteAction() {
+    this.dropdownPopoverShow = false;
+    this.deleteRequest.emit(this.model);
+  }
+
+
 }
