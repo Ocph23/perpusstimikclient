@@ -27,4 +27,11 @@ datas:Anggota[]=[];
     });
   }
 
+  getColor(data:string){
+    if(data==='ya')
+      return "#8ec92c";
+    return "#dc2626";
+
+  }
+
 }

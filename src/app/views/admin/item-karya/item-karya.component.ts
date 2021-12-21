@@ -98,6 +98,8 @@ export class ItemKaryaComponent implements OnInit {
 
   SetResponse(response: ItemKarya[]) {
     response.forEach(element => {
+      element.keadaan="Baik";
+      element.statuspinjam="Tersedia";
       this.model.items.push(element);
     });
   }

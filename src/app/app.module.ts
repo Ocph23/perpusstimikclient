@@ -55,6 +55,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item-history.component';
 import { LokasiComponent } from './views/admin/lokasi/lokasi.component';
 import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.component';
+import { TableTooltipComponent } from './components/tooltips/tabletooltip.component';
 
 
 @NgModule({
@@ -111,6 +112,7 @@ import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.c
     ItemHistoryComponent,
     LokasiComponent,
     AddLokasiComponent,
+    TableTooltipComponent
     
   ],
   imports: [

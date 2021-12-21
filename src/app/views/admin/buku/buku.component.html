@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="block w-full overflow-x-auto p-5">
-      <table class="table">
+      <table class="table" style="width: 100%;" >
         <thead>
           <tr>
             <th>
@@ -32,18 +32,21 @@
               Tahun
             </th>
             <th>
-              
+              ekseplar
+            </th>
+            <th>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of datas">
             <td>{{item.kode}}</td>
-            <td>{{item.judul}}</td>
+            <td #btnRef (mouseenter)="toggleTooltip(item.judul)" (mouseleave)="toggleTooltip(item.judul)" style="cursor: pointer;" >{{item.judul.length>40? item.judul.substring(0,40) + "..." : item.judul}}</td>
             <td>{{item.kategori}}</td>
             <td>{{item.penulis}}</td>
             <td>{{item.penerbit}}</td>
             <td class="text-center">{{item.tahun}}</td>
+            <td>{{item.items.length}}</td>
             <td style="text-align: center;">
               <app-table-dropdown (deleteRequest)="delete($event)" [model]="item" [edit]="'admin/buku/'+item.id" [view]="'admin/detail/'+item.id+'/buku'" ></app-table-dropdown>
             </td>

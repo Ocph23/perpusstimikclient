@@ -29,7 +29,7 @@
                 TTL
               </th>
               <th>
-                Status Aktif
+                Aktif
               </th>
             </tr>
           </thead>
@@ -40,8 +40,8 @@
               <td>{{item.jenis}}</td>
               <td>{{item.jenis_kelamin}}</td>
               <td>{{item.tempat_lahir}}, {{item.tanggal_lahir|date:'dd-MM-yyyy'}}</td>
-              <td style="text-align: center;">
-                  <button style="width: 100%; background-color: rgba(217, 119, 6,1)" class="px-2 h-10 text-white" (click)="updateStatus(item)">{{item.aktif}}</button>
+              <td style="max-width: 75px; text-align: center;">
+                  <button [ngStyle]="{'width':'100%', 'background-color' : getColor(item.aktif)}" class="px-2 h-10 text-white" (click)="updateStatus(item)">{{item.aktif}}</button>
               </td>
             </tr>
           </tbody>

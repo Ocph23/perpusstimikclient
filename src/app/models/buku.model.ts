@@ -13,7 +13,8 @@ export interface Buku{
     cover:string,
     penulis: string
     lokasi:Lokasi,
-    lokasi_id:number
+    lokasi_id:number,
+    items:[]
 }
 
 
@@ -31,7 +32,8 @@ export interface Penelitian{
     tahun:number,
     cover:string,
     lokasi:Lokasi,
-    lokasi_id:number
+    lokasi_id:number,
+    items:[]
 }
 
 
@@ -61,7 +63,7 @@ export interface Anggota{
     kewarganegaraan:string,
     agama:string,
     jenis:string,
-    aktif:boolean
+    aktif:string
 }
 
 export interface Pemesanan{

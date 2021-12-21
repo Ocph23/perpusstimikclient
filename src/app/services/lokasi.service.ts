@@ -79,4 +79,21 @@ export class LokasiService {
     });
   }
 
+  
+
+delete(id:number){
+  this.message.busy();
+ return new Promise((resolve, reject)=>{
+    this.restService.delete(this.controller+"/"+id).subscribe(response=>{
+      var result = response as any;
+      resolve(result.data as Lokasi);
+      this.message.busyStop();
+    },err=>{
+      this.message.busyStop();
+      this.message.errorMessage(err);
+    })
+  });
+}
+
+
 }

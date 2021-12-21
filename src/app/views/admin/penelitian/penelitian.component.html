@@ -39,7 +39,7 @@
           <tbody>
             <tr *ngFor="let item of datas">
               <td>{{item.kode}}</td>
-              <td>{{item.judul}}</td>
+              <td #btnRef (mouseenter)="toggleTooltip(item.judul)" (mouseleave)="toggleTooltip(item.judul)" style="cursor: pointer;" >{{item.judul.length>40? item.judul.substring(0,40) + "..." : item.judul}}</td>
               <td>{{item.topik}}</td>
               <td>{{item.penulis}}</td>
               <td>{{item.pembimbing}}</td>

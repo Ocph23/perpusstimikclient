@@ -29,7 +29,7 @@
                         <td>{{item.nama}}</td>
                         <td>{{item.keterangan}}</td>
                         <td style="text-align: center;width: 50px;">
-                            <app-table-dropdown [edit]="'admin/lokasi/'+item.id" ></app-table-dropdown>
+                            <app-table-dropdown (deleteRequest)="delete($event)" [model]="item" [edit]="'admin/lokasi/'+item.id" ></app-table-dropdown>
                         </td>
                     </tr>
                 </tbody>
