@@ -44,7 +44,7 @@
                             Keadaan
                         </th>
                         <th>
-                            Status Pinjam
+                            Status Kembali
                         </th>
                         <th>
                             Catatan
@@ -55,12 +55,12 @@
                 <tbody >
                     <tr *ngFor="let item of model.items">
                         <td>{{item.ItemKarya.nomorseri}}</td>
-                        <td>{{item.item_karya.parent.judul}}</td>
-                        <td>{{item.item_karya.parent.penulis}}</td>
-                        <td>{{item.item_karya.jenis}}</td>
-                        <td>{{item.item_karya.keadaan}}</td>
-                        <td>{{item.item_karya.statuspinjam}}</td>
-                        <td>{{item.item_karya.catatan}}</td>
+                        <td>{{item.ItemKarya.parent.judul}}</td>
+                        <td>{{item.ItemKarya.parent.penulis}}</td>
+                        <td>{{item.ItemKarya.jenis}}</td>
+                        <td>{{item.ItemKarya.keadaan}}</td>
+                        <td>{{item.statuskembali}}</td>
+                        <td>{{item.ItemKarya.catatan}}</td>
                     </tr>
                 </tbody>
             </table>
