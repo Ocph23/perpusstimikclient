@@ -61,3 +61,26 @@ th, td{
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     background-color: rgba(255, 255, 255,1) !important;
 }
+
+
+
+.justprint{
+  display: none;
+}
+
+@media print{
+  @page {size: A4 landscape; margin: 0px; }
+ .nav, app-sidebar, app-footer-admin, .noprint{
+      display: none;
+  }
+
+  .justprint{
+    display: block;
+  }
+
+  .admin{
+    margin: 0px !important;
+  }
+ 
+}
+

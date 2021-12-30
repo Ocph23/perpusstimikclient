@@ -56,6 +56,7 @@ import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item
 import { LokasiComponent } from './views/admin/lokasi/lokasi.component';
 import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.component';
 import { TableTooltipComponent } from './components/tooltips/tabletooltip.component';
+import { LaporanComponent } from './views/admin/laporan/laporan.component';
 
 
 @NgModule({
@@ -112,7 +113,8 @@ import { TableTooltipComponent } from './components/tooltips/tabletooltip.compon
     ItemHistoryComponent,
     LokasiComponent,
     AddLokasiComponent,
-    TableTooltipComponent
+    TableTooltipComponent,
+    LaporanComponent
     
   ],
   imports: [

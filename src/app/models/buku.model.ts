@@ -115,6 +115,7 @@ export interface PeminjamanItem{
     created_at:Date;
     updated_at:Date;
     ItemKarya:ItemKarya;
+    statuskembali:any;
 }
 
 

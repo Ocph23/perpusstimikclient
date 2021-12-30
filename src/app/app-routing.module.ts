@@ -8,6 +8,7 @@ import { BukuComponent } from './views/admin/buku/buku.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
 import { ItemHistoryComponent } from './views/admin/item-karya/item-history/item-history.component';
 import { ItemKaryaComponent } from './views/admin/item-karya/item-karya.component';
+import { LaporanComponent } from './views/admin/laporan/laporan.component';
 import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.component';
 import { LokasiComponent } from './views/admin/lokasi/lokasi.component';
 import { PemesananDetailComponent } from './views/admin/pemesanan/pemesanan-detail/pemesanan-detail.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
        { path: "pengembalian/:id", component: CreatePengembalianComponent },
        { path: "anggota", component: AnggotaComponent },
        { path: "settings", component: SettingComponent },
+       { path: "laporan", component: LaporanComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
