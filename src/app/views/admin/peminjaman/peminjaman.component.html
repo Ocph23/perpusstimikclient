@@ -37,7 +37,7 @@
                         <td>{{item.kode}}</td>
                         <td>{{item.anggota.kodeanggota}}/{{item.anggota.nama}}</td>
                         <td>{{item.created_at|date:'dd-MM-yyyy'}}</td>
-                        <td>{{item.status}}</td>
+                        <td>{{item.status==='kembali'?'Kembali':'Dipinjam'}}</td>
                         <td>{{item.keterangan}}</td>
                         <td style="text-align: center;">
                             <app-table-peminjaman-dropdown (verifikasiRequest)="verifikasiPesanan($event)"  [model]="item" ></app-table-peminjaman-dropdown>

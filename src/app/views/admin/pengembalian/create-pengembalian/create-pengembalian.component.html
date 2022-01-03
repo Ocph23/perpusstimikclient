@@ -63,9 +63,6 @@
               Terlambat(hari)
             </th>
             <th>
-              Harga
-            </th>
-            <th>
               Denda
             </th>
             <th>
@@ -79,11 +76,10 @@
         <tbody>
           <tr *ngFor="let item of datas">
             <td>{{item.peminjamanItem.ItemKarya.nomorseri}}</td>
-            <td>{{item.peminjamanItem.ItemKarya.parent.judul}}</td>
+            <td>{{item.peminjamanItem.ItemKarya.parent.judul.length>40? item.peminjamanItem.ItemKarya.parent.judul.substring(0,40) + "..." : item.peminjamanItem.ItemKarya.parent.judul}}</td>
             <td>{{item.peminjamanItem.ItemKarya.parent.penulis}}</td>
             <td>{{item.peminjamanItem.ItemKarya.jenis}}</td>
             <td>{{item.terlambat}}</td>
-            <td>Rp. {{item.harga|number}}</td>
             <td>Rp. {{(item.terlambat*item.harga)|number}}</td>
             <td><textarea ([ngModel])="item.keadaan"></textarea></td>
             <td style="text-align: center;"><i style="color: red;" class="fa fa-trash"></i></td>
