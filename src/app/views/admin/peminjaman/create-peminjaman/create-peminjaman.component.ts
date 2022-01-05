@@ -137,11 +137,11 @@ export class CreatePeminjamanComponent implements OnInit {
       this.message.errorMessage("Anda Belum Memilih Anggota/Peminjam");
       return;
     }
-    
     this.Model.items = this.items as PemesananItem[];
-    
     this.pemesanan.CreatePemesananAndPeminjaman(this.Model).then(response=>{
       this.message.successMessage("Peminjaman Berhasil Dibuat !");
+      this.Model={} as Pemesanan;
+      this.items=[];
     });
 
 
