@@ -9,6 +9,7 @@ import { RestService } from './rest.service';
   providedIn: 'root'
 })
 export class PemesananService {
+  
   controller:string="api/pemesanan"
   constructor(private restService:RestService,  private message:MessageService) { }
 
@@ -88,6 +89,21 @@ createPeminjaman(model:any){
 
 }
 
+CreatePemesananAndPeminjaman(model:any){
+  this.message.busy();
+  return new Promise((resolve, reject) => {
+    this.restService.post("api/pemesanan/andpeminjaman",model).subscribe(response => {
+      var result = response as any;
+      resolve(result.data as Pemesanan);
+      this.message.busyStop();
+      this.message.successMessage("Data Tersimpan !");
+    }, err => {
+      this.message.busyStop();
+      this.message.errorMessage(err);
+    })
+  });
+
+}
 
 
 

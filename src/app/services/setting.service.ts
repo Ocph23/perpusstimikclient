@@ -42,6 +42,20 @@ export class SettingService {
 
     });
   }
+  getbookandpenelitian() {
+    this.message.busy();
+    return new Promise((resolve, reject) => {
+      this.restService.get(this.controller+"/bookandpenelitian").subscribe(response => {
+        var result = response as any;
+        resolve(result.data);
+        this.message.busyStop();
+      }, err => {
+        this.message.busyStop();
+        this.message.errorMessage(err);
+      })
+
+    });
+  }
 
 
 

@@ -83,6 +83,7 @@ export interface PemesananItem{
     terlambat: number;
     id:number;
     peminjaman_id:number;
+    pesananid:number;
     karyaitemid:number;
     tanggal_kembali:Date;
     parent:any;

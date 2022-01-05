@@ -57,6 +57,7 @@ import { LokasiComponent } from './views/admin/lokasi/lokasi.component';
 import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.component';
 import { TableTooltipComponent } from './components/tooltips/tabletooltip.component';
 import { LaporanComponent } from './views/admin/laporan/laporan.component';
+import { CreatePeminjamanComponent } from './views/admin/peminjaman/create-peminjaman/create-peminjaman.component';
 
 
 @NgModule({
@@ -114,7 +115,8 @@ import { LaporanComponent } from './views/admin/laporan/laporan.component';
     LokasiComponent,
     AddLokasiComponent,
     TableTooltipComponent,
-    LaporanComponent
+    LaporanComponent,
+    CreatePeminjamanComponent
     
   ],
   imports: [

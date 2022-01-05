@@ -13,6 +13,7 @@ import { AddLokasiComponent } from './views/admin/lokasi/add-lokasi/add-lokasi.c
 import { LokasiComponent } from './views/admin/lokasi/lokasi.component';
 import { PemesananDetailComponent } from './views/admin/pemesanan/pemesanan-detail/pemesanan-detail.component';
 import { PemesananComponent } from './views/admin/pemesanan/pemesanan.component';
+import { CreatePeminjamanComponent } from './views/admin/peminjaman/create-peminjaman/create-peminjaman.component';
 import { PeminjamanDetailComponent } from './views/admin/peminjaman/peminjaman-detail/peminjaman-detail.component';
 import { PeminjamanComponent } from './views/admin/peminjaman/peminjaman.component';
 import { AddPenelitianComponent } from './views/admin/penelitian/add-penelitian/add-penelitian.component';
@@ -52,6 +53,7 @@ const routes: Routes = [
        { path: "anggota", component: AnggotaComponent },
        { path: "settings", component: SettingComponent },
        { path: "laporan", component: LaporanComponent },
+       { path: "peminjaman/create", component: CreatePeminjamanComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
