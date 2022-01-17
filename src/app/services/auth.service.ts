@@ -11,9 +11,9 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient, 
-    private helperService:HelperService,
-    private message:MessageService,
+  constructor(private http: HttpClient,
+    private helperService: HelperService,
+    private message: MessageService,
     private localStoreServices: LocalStorageService,
     private activeRoute: ActivatedRoute,
     public router: Router) { }
@@ -27,7 +27,7 @@ export class AuthService {
 
   isInRole(role: string): boolean {
     let data: LoginResponse = this.localStoreServices.getUserLogin();
-    if (data !== null && data.roles.find(x=>x === role))
+    if (data !== null && data.roles.find(x => x === role))
       return true;
     return false;
   }
@@ -35,9 +35,9 @@ export class AuthService {
   load() {
     let data: LoginResponse = this.localStoreServices.getUserLogin();
     if (this.router.url == "/home/main") {
-      if (data != null && data.roles.find(x=>x == 'admin')) {
+      if (data != null && data.roles.find(x => x == 'admin')) {
         this.router.navigate(['admin']);
-      }else{
+      } else {
         this.router.navigate(['anggota']);
       }
     }
@@ -45,17 +45,17 @@ export class AuthService {
 
   login(model: UserLogin) {
     var time = this.message.busy();
-     return new Promise((resolve, reject)=>{
-        this.http.post(this.helperService.apiUrl+"/api/login", model).subscribe((response:any)=>{
-            var result = response.data as LoginResponse;
-            this.localStoreServices.setUserLogin(result);
-            this.message.busyStop();
-            resolve(result); 
-        },(err)=>{
-          this.message.busyStop();
-          reject(false);
-        });
-      })
+    return new Promise((resolve, reject) => {
+      this.http.post(this.helperService.apiUrl + "/api/login", model).subscribe((response: any) => {
+        var result = response.data as LoginResponse;
+        this.localStoreServices.setUserLogin(result);
+        this.message.busyStop();
+        resolve(result);
+      }, (err) => {
+        this.message.busyStop();
+        reject(false);
+      });
+    })
   }
 
   logout() {
@@ -82,11 +82,11 @@ export class AuthService {
 
   getHeader() {
 
-    var headers = { 'Content-Type': 'application/json', 'Authorization':'' };
-    
+    var headers = { 'Content-Type': 'application/json', 'Authorization': '' };
+
     let data: LoginResponse = this.localStoreServices.getUserLogin();
     if (data != null)
-      headers.Authorization ='Bearer '+ data.token;
+      headers.Authorization = 'Bearer ' + data.token;
 
     return { headers };
   }

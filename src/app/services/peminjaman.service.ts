@@ -87,10 +87,10 @@ export class PeminjamanService {
     });
   }
 
-  createPeminjaman(model:Peminjaman){
+  createPeminjaman(model: Peminjaman) {
     this.message.busy();
     return new Promise((resolve, reject) => {
-      this.restService.post(this.controller+"", model).subscribe(response => {
+      this.restService.post(this.controller + "", model).subscribe(response => {
         var result = response as any;
         resolve(result.data as Peminjaman);
         this.message.busyStop();
